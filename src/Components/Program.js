@@ -1,8 +1,9 @@
 import React from 'react'
+import './Page.css';
 
 function Program() {
     return (
-        <div className='program'>
+        <div className='page program'>
             <h1>Program</h1>
         </div>
     )
