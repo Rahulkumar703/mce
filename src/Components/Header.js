@@ -16,7 +16,14 @@ function Header() {
         else {
             document.body.classList.remove('dark');
         }
-    })
+    }, [isDarkMode]);
+
+    useEffect(() => {
+        window.onresize = () => {
+            setIsActiveHamburger(false);
+            setIsThemeOpen(false);
+        }
+    }, [isDarkMode])
 
     const changeTheme = (e) => {
         const styles = getComputedStyle(e.target);
@@ -88,7 +95,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className="hamburger" onClick={() => { setIsActiveHamburger(!isActiveHamburger) }}>
+            <div className={isActiveHamburger ? "hamburger active" : "hamburger"} onClick={() => { setIsActiveHamburger(!isActiveHamburger) }}>
                 <span></span>
                 <span></span>
                 <span></span>
