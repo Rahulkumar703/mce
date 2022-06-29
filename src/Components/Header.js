@@ -17,6 +17,13 @@ function Header() {
         }
     })
 
+    const changeTheme = (e) => {
+        const styles = getComputedStyle(e.target);
+        const color = styles.getPropertyValue('--color');
+
+        document.documentElement.style
+            .setProperty('--primary', color);
+    }
     return (
         <header className='header'>
             <div className="page-heading">
@@ -64,9 +71,12 @@ function Header() {
                 <div className="themecolor" onClick={() => { setIsThemeOpen(!isThemeOpen) }}>
                     <ion-icon name="color-palette-outline"></ion-icon>
                     {isThemeOpen ? <div className="color-palate">
-                        <div className="color" data-color='#eaeaea'></div>
-                        <div className="color" data-color='#eaeaea'></div>
-                        <div className="color" data-color='#eaeaea'></div>
+                        <div className="colors" style={{ '--color': '#f4ff30' }} onClick={changeTheme}></div>
+                        <div className="colors" style={{ '--color': '#4d14c6' }} onClick={changeTheme}></div>
+                        <div className="colors" style={{ '--color': '#ff0a0a' }} onClick={changeTheme}></div>
+                        <div className="colors" style={{ '--color': '#28ff10' }} onClick={changeTheme}></div>
+                        <div className="colors" style={{ '--color': '#9913b7' }} onClick={changeTheme}></div>
+                        <div className="colors" style={{ '--color': '#ae1a2b' }} onClick={changeTheme}></div>
                     </div> : ''}
                 </div>
             </div>
