@@ -1,0 +1,31 @@
+:root {
+  --primary: #edaeda;
+  --secondary: #aeacae;
+  --accent: #12a12a;
+  --bg1: #f68844;
+  --bg2: #ea6a4e;
+  --bg3: #ea3263;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  --text: #101010;
+  --night-text: #ffffff;
+  --bg: rgba(235, 235, 235, 0.2);
+}
+
+body.dark {
+  --text: #ffffff;
+  --night-text: #101010;
+  --bg: rgba(35, 35, 35, 0.2);
+}
