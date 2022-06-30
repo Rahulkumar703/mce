@@ -1,0 +1,144 @@
+.registration .form-container {
+    background: linear-gradient(125deg, var(--bg), rgba(255, 255, 255, 0.1));
+    padding: 5rem;
+    border-radius: 2rem;
+    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.registration .form-title {
+    padding: 2rem 0;
+}
+
+.form-title h3 {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.form-title p {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: .5rem;
+    background: linear-gradient(60deg, transparent, var(--bg), transparent);
+    padding: .5rem;
+    border-top: 1px solid var(--bg);
+    border-bottom: 1px solid var(--bg);
+}
+
+.registration .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form .input-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+.input-box .input-field {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    background: linear-gradient(125deg, var(--bg), rgba(255, 255, 255, 0.3));
+    border: 1px solid transparent;
+    outline-color: var(--primary);
+}
+
+.input-box .input-field[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.input-box .input-field:hover,
+.input-box .input-field:focus {
+    border: 1px solid var(--bg);
+}
+
+.input-box .input-field:valid~label,
+.input-box .input-field:focus~label {
+    top: -1.2rem;
+    color: var(--primary);
+}
+
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    font-size: 1.5rem;
+    transition: .3s ease;
+    pointer-events: none;
+}
+
+.input-box.radio {
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-box.radio label {
+    position: static;
+    transform: translate(0, 0);
+    font-size: 1.8rem;
+    pointer-events: fill;
+}
+
+.input-box.radio .radio-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.radio-box input {
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.radio-box input:checked~label {
+    color: var(--primary);
+}
+
+.radio-box label {
+    padding: .5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.form .action-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+.action-btns input {
+    background: linear-gradient(125deg, var(--primary), rgba(255, 255, 255, 0.1));
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: .3s ease;
+    border: 1px solid var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.action-btns input[type="reset"] {
+    background: none;
+    color: var(--secondary);
+    border-color: transparent;
+    text-decoration: underline;
+    font-size: 1.8rem;
+}
