@@ -14,11 +14,11 @@ function App() {
       <Header />
       <Routes>
         <Route exact path='/' element={<Home />}></Route>
-        <Route path='/program' element={<Program />}></Route>
-        <Route path='/registration' element={<Registration />}></Route>
-        <Route path='/gallery' element={<Gallery />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/*' element={<Error404 />}></Route>
+        <Route exact path='/program' element={<Program />}></Route>
+        <Route exact path='/registration' element={<Registration />}></Route>
+        <Route exact path='/gallery' element={<Gallery />}></Route>
+        <Route exact path='/about' element={<About />}></Route>
+        <Route path='*' element={<Error404 />}></Route>
       </Routes>
     </div>
   );

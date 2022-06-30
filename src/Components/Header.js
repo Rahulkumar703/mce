@@ -23,14 +23,13 @@ function Header() {
             setIsActiveHamburger(false);
             setIsThemeOpen(false);
         }
-    }, [isDarkMode])
+    }, [])
 
     const changeTheme = (e) => {
         const styles = getComputedStyle(e.target);
         const color = styles.getPropertyValue('--color');
 
-        document.documentElement.style
-            .setProperty('--primary', color);
+        document.documentElement.style.setProperty('--primary', color);
     }
     return (
         <header className='header'>
