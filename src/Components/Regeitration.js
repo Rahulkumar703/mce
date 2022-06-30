@@ -43,6 +43,10 @@ function Registration() {
                             <input type="radio" name="Paricipated" id="project" required />
                             <label htmlFor="project">Project</label>
                         </div>
+                        <div className="radio-box">
+                            <input type="radio" name="Paricipated" id="standup" required />
+                            <label htmlFor="standup">Stand Up</label>
+                        </div>
                     </div>
                     <div className="action-btns">
                         <input type="reset" value="Clear" />
