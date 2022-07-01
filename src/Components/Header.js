@@ -94,7 +94,7 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className={isActiveHamburger ? "hamburger active" : "hamburger"} onClick={() => { setIsActiveHamburger(!isActiveHamburger) }}>
+            <div className={isActiveHamburger ? "hamburger active" : "hamburger"} onClick={() => { setIsActiveHamburger(!isActiveHamburger); setIsThemeOpen(false) }}>
                 <span></span>
                 <span></span>
                 <span></span>

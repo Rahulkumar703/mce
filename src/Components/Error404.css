@@ -26,7 +26,7 @@
 }
 
 .error-404 .go-back {
-    background: linear-gradient(125deg, var(--primary), rgba(255, 255, 255, 0.3));
+    background: var(--bg);
     padding: 1rem 2rem;
     border-radius: .5rem;
     font-size: 1.5rem;

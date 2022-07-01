@@ -8,11 +8,12 @@
     padding: 0 5rem;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(120deg, var(--bg), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(5px);
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2), inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+    background: var(--bg);
     transition: .3s ease;
     z-index: 5;
+    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
+        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .header .page-heading {
@@ -48,6 +49,7 @@
     z-index: 5;
 }
 
+
 .header .nav-bar,
 .header .nav-list {
     display: flex;
@@ -63,7 +65,7 @@
 }
 
 .nav-list .nav-items .nav-links {
-    background: linear-gradient(125deg, var(--bg), rgba(255, 255, 255, 0.1));
+    background: var(--bg);
     padding: 1rem 2rem;
     border-radius: .5rem;
     font-size: 1.5rem;
@@ -89,7 +91,7 @@
 }
 
 .nav-list .nav-items:hover .nav-links {
-    color: var(--night-text);
+    color: var(--primary);
 }
 
 .nav-list .nav-items:hover {
@@ -109,7 +111,7 @@
 
 .theme-menu .dark-mode-toggle,
 .theme-menu .themecolor {
-    background: linear-gradient(125deg, var(--bg), rgba(255, 255, 255, 0.1));
+    background: var(--bg);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -135,7 +137,6 @@
     top: 5rem;
     left: 50%;
     background: var(--bg);
-    backdrop-filter: blur(5px);
     border-radius: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 3rem);
@@ -185,14 +186,14 @@
 }
 
 .hamburger:hover span {
-    opacity: 1;
+    background: var(--text);
 }
 
 .hamburger span {
-    border: 1px solid var(--night-text);
+    border: 1px solid var(--text);
     border-radius: .5rem;
-    background: var(--bg);
-    opacity: 0.8;
+    background: var(--fade-bg);
+    opacity: 0.6;
     transition: .3s ease;
     pointer-events: none;
 }
@@ -249,7 +250,10 @@
         height: auto;
         padding: 1rem;
         overflow: visible;
-        background: linear-gradient(125deg, var(--bg), rgba(255, 255, 255, 0.1));
+        background: var(--bg);
+        box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+            inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
+            .5rem .5rem 10px rgba(0, 0, 0, 0.2);
     }
 
     .nav-list .nav-items .nav-links {
