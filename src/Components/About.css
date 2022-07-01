@@ -1,11 +1,10 @@
 .about {
     background: url('../Assets/R.jpg');
     background-attachment: fixed;
-    background-size: auto 100%;
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
     justify-content: start;
-    padding-top: 5rem;
 
 }
 

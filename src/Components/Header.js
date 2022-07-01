@@ -8,6 +8,7 @@ function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isThemeOpen, setIsThemeOpen] = useState(false);
     const [isActiveHamburger, setIsActiveHamburger] = useState(false);
+    const [activeTab, setActiveTab] = useState('/');
 
     useEffect(() => {
         if (isDarkMode) {
@@ -25,12 +26,21 @@ function Header() {
         }
     }, [])
 
+    useEffect(() => {
+        setActiveTab(window.location.pathname)
+    }, [])
+
+
     const changeTheme = (e) => {
         const styles = getComputedStyle(e.target);
         const color = styles.getPropertyValue('--color');
 
         document.documentElement.style.setProperty('--primary', color);
     }
+    const changeActiveTab = (e) => {
+        setActiveTab(e.target.getAttribute('href'))
+    }
+
     return (
         <header className='header'>
             <div className="page-heading">
@@ -45,32 +55,32 @@ function Header() {
                 <nav className='nav-bar'>
                     <ul className='nav-list'>
                         <li className='nav-items'>
-                            <Link className='nav-links' to="/">
+                            <Link className={activeTab !== '/' ? 'nav-links' : 'nav-links active'} onClick={changeActiveTab} to="/" >
                                 <ion-icon className="icons" name="home-outline"></ion-icon>
                                 <p>Home</p>
                             </Link>
                         </li>
                         <li className='nav-items'>
-                            <Link className='nav-links' to="/program">
+                            <Link className={activeTab !== '/program' ? 'nav-links' : 'nav-links active'} onClick={changeActiveTab} to="/program">
                                 <ion-icon className="icons" name="stats-chart-outline"></ion-icon>
                                 <p>Program</p>
                             </Link>
                         </li>
                         <li className='nav-items'>
-                            <Link className='nav-links' to="/about">
+                            <Link className={activeTab !== '/about' ? 'nav-links' : 'nav-links active'} onClick={changeActiveTab} to="/about">
                                 <ion-icon className="icons" name="information-circle-outline"></ion-icon>
                                 <p>About</p>
                             </Link>
                         </li>
                         <li className='nav-items'>
-                            <Link className='nav-links' to="/gallery">
+                            <Link className={activeTab !== '/gallery' ? 'nav-links' : 'nav-links active'} onClick={changeActiveTab} to="/gallery">
                                 <ion-icon className="icons" name="images-outline"></ion-icon>
                                 <p>Gallery</p>
                             </Link>
                         </li>
                         <li className='nav-items'>
 
-                            <Link className='nav-links' id='register' to="/registration">
+                            <Link className={activeTab !== '/register' ? 'nav-links' : 'nav-links active'} id='register' onClick={changeActiveTab} to="/registration">
                                 <ion-icon className="icons" name="person-add-outline"></ion-icon>
                                 <p>Registration</p>
                             </Link>

@@ -3,7 +3,8 @@
     padding: 2rem 5rem;
     border-radius: 2rem;
     box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
+        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
@@ -47,9 +48,11 @@
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: .5rem;
-    background: var(--bg);
     border: 1px solid transparent;
     outline-color: var(--primary);
+    background: var(--bg);
+    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .input-box .input-field[type="number"]::-webkit-inner-spin-button {
@@ -58,7 +61,7 @@
 
 .input-box .input-field:hover,
 .input-box .input-field:focus {
-    border: 1px solid var(--bg);
+    border: 1px solid var(--text);
 }
 
 .input-box .input-field:valid~label,
@@ -133,10 +136,13 @@
     justify-content: center;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .action-btns input:hover {
-    transform: scale(1.2);
+    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
+        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .action-btns input[type="reset"] {
@@ -145,4 +151,5 @@
     border-color: transparent;
     text-decoration: underline;
     font-size: 1.8rem;
+    box-shadow: none;
 }
