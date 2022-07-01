@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 
 function Header() {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
     const [isThemeOpen, setIsThemeOpen] = useState(false);
     const [isActiveHamburger, setIsActiveHamburger] = useState(false);
-    const [activeTab, setActiveTab] = useState('/');
+    const [activeTab, setActiveTab] = useState(window.location.pathname);
+
 
     useEffect(() => {
         if (isDarkMode) {
@@ -26,9 +27,6 @@ function Header() {
         }
     }, [])
 
-    useEffect(() => {
-        setActiveTab(window.location.pathname)
-    }, [])
 
 
     const changeTheme = (e) => {
@@ -37,6 +35,7 @@ function Header() {
 
         document.documentElement.style.setProperty('--primary', color);
     }
+
     const changeActiveTab = (e) => {
         setActiveTab(e.target.getAttribute('href'))
     }
@@ -80,7 +79,7 @@ function Header() {
                         </li>
                         <li className='nav-items'>
 
-                            <Link className={activeTab !== '/register' ? 'nav-links' : 'nav-links active'} id='register' onClick={changeActiveTab} to="/registration">
+                            <Link className={activeTab !== '/registration' ? 'nav-links' : 'nav-links active'} id='register' onClick={changeActiveTab} to="/registration">
                                 <ion-icon className="icons" name="person-add-outline"></ion-icon>
                                 <p>Registration</p>
                             </Link>
@@ -94,12 +93,15 @@ function Header() {
                     <div className="themecolor" onClick={() => { setIsThemeOpen(!isThemeOpen) }}>
                         <ion-icon name="color-palette-outline"></ion-icon>
                         {isThemeOpen ? <div className="color-palate">
-                            <div className="colors" style={{ '--color': '#f4ff30' }} onClick={changeTheme}></div>
-                            <div className="colors" style={{ '--color': '#4d14c6' }} onClick={changeTheme}></div>
-                            <div className="colors" style={{ '--color': '#ff0a0a' }} onClick={changeTheme}></div>
-                            <div className="colors" style={{ '--color': '#28ff10' }} onClick={changeTheme}></div>
-                            <div className="colors" style={{ '--color': '#9913b7' }} onClick={changeTheme}></div>
-                            <div className="colors" style={{ '--color': '#ae1a2b' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#64FFC4' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#ff7e7e' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#f057ba' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#b06aff' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#5e60fb' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#5efbf9' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#88fb5e' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#fbf55e' }} onClick={changeTheme}></div>
+                            <div className="colors" style={{ '--color': '#fbaf5e' }} onClick={changeTheme}></div>
                         </div> : ''}
                     </div>
                 </div>
