@@ -2,7 +2,6 @@ import React from 'react'
 import './Page.css';
 import './Home.css';
 import poster from '../Assets/poster.png'
-import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -28,15 +27,15 @@ function Home() {
                 <div className="social-links">
                     <div className="links">
                         <ion-icon name="logo-facebook"></ion-icon>
-                        <Link to="https://www.facebook.com">Facebook</Link>
+                        <a target="_blank" rel='noreferrer' href="https://www.facebook.com">Facebook</a>
                     </div>
                     <div className="links">
                         <ion-icon name="logo-instagram"></ion-icon>
-                        <Link to="https://www.instagram.com">Instagram</Link>
+                        <a target="_blank" rel='noreferrer' href="https://www.instagram.com">Instagram</a>
                     </div>
                     <div className="links">
                         <ion-icon name="logo-linkedin"></ion-icon>
-                        <Link to="https://www.linkedin.com">Linkedin</Link>
+                        <a target="_blank" rel='noreferrer' href="https://www.linkedin.com">Linkedin</a>
                     </div>
                 </div></div>
         </div>

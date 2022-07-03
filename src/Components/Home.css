@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background: var(--bg-dark);
     padding: 5rem;
 }
 

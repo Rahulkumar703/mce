@@ -8,12 +8,9 @@
     padding: 0 5rem;
     align-items: center;
     justify-content: space-between;
-    background: var(--bg);
+    background: var(--bg-dark);
     transition: .3s ease;
     z-index: 5;
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
-        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .header .page-heading {
@@ -65,19 +62,15 @@
 }
 
 .nav-list .nav-items .nav-links {
-    background: var(--bg);
     padding: 1rem 2rem;
     border-radius: .5rem;
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--light-text);
     text-decoration: none;
     transition: .3s ease;
-    border: 1px solid var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-list .nav-items .nav-links ion-icon {
@@ -98,16 +91,24 @@
     box-shadow: none;
 }
 
-.nav-list .nav-items .nav-links.active#register,
-.nav-list .nav-items .nav-links#register:hover {
-    color: var(--primary);
-}
+
 
 .nav-list .nav-items .nav-links:hover,
-.nav-list .nav-items .nav-links.active {
+.nav-list .nav-items .nav-links#register:hover {
+    background: var(--light-hover-color);
+    color: var(--text);
+}
+
+.nav-list .nav-items .nav-links.active,
+.nav-list .nav-items .nav-links#register.active {
     color: var(--primary);
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+    background: var(--light-hover-color);
+}
+
+.nav-list .nav-items .nav-links.active:hover,
+.nav-list .nav-items .nav-links#register.active:hover {
+    color: var(--primary);
+    background: var(--dark-hover-color);
 }
 
 
@@ -200,19 +201,19 @@
     transform: rotate(45deg) translateY(-30%);
 }
 
-.hamburger:hover span {
-    background: var(--text);
-}
 
 .hamburger span {
-    border: 1px solid var(--text);
+    /* border: 1px solid var(--text); */
     border-radius: .5rem;
-    background: var(--fade-bg);
+    background: var(--light-text);
     opacity: 0.6;
     transition: .3s ease;
     pointer-events: none;
 }
 
+.hamburger:hover span {
+    background: var(--text);
+}
 
 
 /* Responsive Work */
@@ -266,9 +267,6 @@
         padding: 1rem;
         overflow: visible;
         background: var(--bg);
-        box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-            inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
-            .5rem .5rem 10px rgba(0, 0, 0, 0.2);
     }
 
     .nav-list .nav-items .nav-links {

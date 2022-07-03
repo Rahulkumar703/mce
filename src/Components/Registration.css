@@ -1,10 +1,7 @@
 .registration .form-container {
-    background: var(--bg);
+    background: var(--bg-dark);
     padding: 2rem 5rem;
     border-radius: 2rem;
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2),
-        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
@@ -25,8 +22,7 @@
     margin-top: .5rem;
     background: linear-gradient(60deg, transparent, var(--bg), transparent);
     padding: .5rem;
-    border-top: 1px solid var(--bg);
-    border-bottom: 1px solid var(--bg);
+    transition: .3s ease-in-out;
 }
 
 .registration .form {
@@ -51,8 +47,11 @@
     border: 1px solid transparent;
     outline-color: var(--primary);
     background: var(--bg);
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+    color: var(--text);
+}
+
+.input-box .input-field#branch {
+    text-transform: uppercase;
 }
 
 .input-box .input-field[type="number"]::-webkit-inner-spin-button {
@@ -61,13 +60,14 @@
 
 .input-box .input-field:hover,
 .input-box .input-field:focus {
-    border: 1px solid var(--text);
+    border: 1px solid var(--light-text);
 }
 
 .input-box .input-field:valid~label,
 .input-box .input-field:focus~label {
     top: -1.2rem;
     color: var(--primary);
+    opacity: 1;
 }
 
 
@@ -79,11 +79,14 @@
     font-size: 1.5rem;
     transition: .3s ease;
     pointer-events: none;
+    color: var(--text);
+    opacity: 0.5;
 }
 
 .input-box.radio {
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
 }
 
 .input-box.radio label {
@@ -91,22 +94,58 @@
     transform: translate(0, 0);
     font-size: 1.8rem;
     pointer-events: fill;
+    opacity: 0.8;
+}
+
+.input-box.radio>label {
+    opacity: 1;
 }
 
 .input-box.radio .radio-box {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     flex: 1;
 }
 
 .radio-box input {
     margin-right: .5rem;
     cursor: pointer;
+    visibility: hidden;
+    position: relative;
+}
+
+.radio-box input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    border-radius: 50%;
+    visibility: visible;
+}
+
+.radio-box input::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: var(--primary);
+    border-radius: 50%;
+    visibility: none;
+}
+
+.radio-box input:checked::after {
+    visibility: visible;
 }
 
 .radio-box input:checked~label {
     color: var(--primary);
+    opacity: 1;
 }
 
 .radio-box label {
@@ -123,33 +162,47 @@
 }
 
 .action-btns input {
-    background: var(--bg);
     padding: 1rem 2rem;
     border-radius: .5rem;
     font-size: 1.5rem;
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--bg);
     text-decoration: none;
     transition: .3s ease;
-    border: 1px solid var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
     font-weight: bold;
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        .5rem .5rem 10px rgba(0, 0, 0, 0.2);
 }
 
 .action-btns input:hover {
-    box-shadow: inset -.5rem -.5rem 10px rgba(255, 255, 255, 0.2),
-        inset .5rem .5rem 10px rgba(0, 0, 0, 0.2);
+    background: var(--bg);
+    color: var(--primary);
 }
 
 .action-btns input[type="reset"] {
     background: none;
     color: var(--secondary);
     border-color: transparent;
-    text-decoration: underline;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     box-shadow: none;
+    text-decoration: none;
+}
+
+.action-btns input[type="reset"]:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width:500px) {
+    .radio-box label {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .input-box.radio {
+        flex-direction: column;
+    }
 }

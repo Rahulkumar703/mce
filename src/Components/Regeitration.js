@@ -1,25 +1,35 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import './Page.css';
 import './Registration.css';
 
 function Registration() {
 
-    const [inputData, setInputData] = useState({ name: '', branch: '', roll: '', year: '', paricipated: '' });
+    const [inputData, setInputData] = useState({ name: '', branch: '', roll: '', year: '', participation: '' });
+    const [info, setInfo] = useState('All fields are mendatory');
 
     const submitForm = async (e) => {
         e.preventDefault();
-        setInputData({ name: '', branch: '', roll: '', year: '', paricipated: '' });
+        setInfo('');
+
+        const response = await axios.post('http://localhost:8080/api/mce/insert/registration', inputData);
+        setInfo(response.data.message);
+
+        setInputData({ name: '', branch: '', roll: '', year: '', participation: '' });
     }
     const handleInput = (e) => {
         setInputData((prev) => { return { ...prev, [e.target.name]: e.target.value } });
     }
+
+
+
 
     return (
         <div className='page registration'>
             <div className="form-container">
                 <div className="form-title">
                     <h3>Students details are required for the registration :</h3>
-                    <p>All * fields are mandatory</p>
+                    <p>{info}</p>
                 </div>
                 <form className="form" onSubmit={submitForm}>
                     <div className="input-box">
@@ -41,15 +51,15 @@ function Registration() {
                     <div className="input-box radio">
                         <label>Participation Field</label>
                         <div className="radio-box">
-                            <input type="radio" name="paricipated" id="quiz" value='Quiz' onChange={handleInput} required />
+                            <input type="radio" name="participation" id="quiz" value='Quiz' onChange={handleInput} required />
                             <label htmlFor="quiz">Quiz</label>
                         </div>
                         <div className="radio-box">
-                            <input type="radio" name="paricipated" id="project" value='Project' onChange={handleInput} required />
+                            <input type="radio" name="participation" id="project" value='Project' onChange={handleInput} required />
                             <label htmlFor="project">Project</label>
                         </div>
                         <div className="radio-box">
-                            <input type="radio" name="paricipated" id="standup" value='Standup' onChange={handleInput} required />
+                            <input type="radio" name="participation" id="standup" value='Standup' onChange={handleInput} required />
                             <label htmlFor="standup">Stand Up</label>
                         </div>
                     </div>

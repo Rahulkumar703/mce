@@ -15,11 +15,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--fade-bg);
+  background: var(--light-hover-color);
   border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text);
+  background: var(--dark-hover-color);
   border-radius: .5rem;
 }
