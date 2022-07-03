@@ -12,7 +12,7 @@ function Registration() {
         e.preventDefault();
         setInfo('');
 
-        const response = await axios.post('http://localhost:8080/api/mce/insert/registration', inputData);
+        const response = await axios.post('/api/mce/insert/registration', inputData);
         setInfo(response.data.message);
 
         setInputData({ name: '', branch: '', roll: '', year: '', participation: '' });
